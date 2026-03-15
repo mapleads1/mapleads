@@ -1,19 +1,1244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>En mantenimiento</title>
-    <style>
-        body { text-align: center; padding: 50px; font-family: sans-serif; }
-        h1 { font-size: 50px; }
-        article { display: block; width: 600px; margin: 0 auto; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MapLeads · SEO Local y Google Business Profile en Costa del Sol</title>
+<meta name="description" content="Especialistas en SEO Local y optimización de Google Business Profile en la Costa del Sol. Aparece en el TOP 3 de Google Maps. Auditoría gratuita. ☎ Contactar ahora.">
+<meta name="keywords" content="SEO local costa del sol, google business profile marbella, optimización GBP, seo local marbella, posicionamiento google maps costa del sol, agencia seo local estepona">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ES-MA">
+<meta name="geo.placename" content="Costa del Sol">
+<meta property="og:title" content="MapLeads · Especialistas en SEO Local y Google Business Profile · Costa del Sol">
+<meta property="og:description" content="Optimizamos tu perfil de Google para que aparezcas en el TOP 3 de Google Maps. Más visitas, más llamadas, más clientes.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Montserrat:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =====================
+   VARIABLES
+===================== */
+:root {
+  --navy: #1B3361;
+  --blue: #1B5EAB;
+  --blue-mid: #1A55A0;
+  --blue-light: #4A90D9;
+  --blue-pale: #E8F1FA;
+  --blue-soft: #F0F6FF;
+  --white: #FFFFFF;
+  --off-white: #F8FAFD;
+  --dark: #0D1B2E;
+  --text: #3A4A5C;
+  --text-light: #6B7A8D;
+  --border: #E2EAF4;
+  --shadow: 0 4px 24px rgba(27,51,97,.08);
+  --shadow-hover: 0 16px 48px rgba(27,51,97,.14);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* =====================
+   RESET — MOBILE FIRST
+===================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* =====================
+   TYPOGRAPHY — MOBILE FIRST
+===================== */
+h1, h2 { font-family: 'Syne', sans-serif; line-height: 1.1; }
+h3 { font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 1.2; }
+h1 { font-size: 2.1rem; font-weight: 800; }
+h2 { font-size: 1.7rem; font-weight: 800; }
+h3 { font-size: 1.05rem; }
+p { line-height: 1.75; }
+
+@media (min-width: 768px) {
+  h1 { font-size: 2.9rem; }
+  h2 { font-size: 2.3rem; }
+}
+@media (min-width: 1024px) {
+  h1 { font-size: clamp(2.8rem, 4.8vw, 4rem); }
+  h2 { font-size: clamp(2.1rem, 3.2vw, 2.8rem); }
+}
+
+/* =====================
+   REVEAL
+===================== */
+.rev { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.rev.on { opacity: 1; transform: none; }
+.rev-l { opacity: 0; transform: translateX(-24px); transition: opacity .7s ease, transform .7s ease; }
+.rev-l.on { opacity: 1; transform: none; }
+.rev-r { opacity: 0; transform: translateX(24px); transition: opacity .7s ease, transform .7s ease; }
+.rev-r.on { opacity: 1; transform: none; }
+
+/* =====================
+   NAV — MOBILE FIRST
+===================== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow .3s;
+}
+nav.scrolled { box-shadow: 0 4px 24px rgba(27,51,97,.1); }
+
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-logo-img { height: 40px; width: auto; }
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-name { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 900; letter-spacing: .5px; line-height: 1; }
+.nav-logo-name .map { color: var(--navy); }
+.nav-logo-name .leads { color: var(--blue); }
+.nav-logo-sub { font-size: .58rem; font-weight: 600; color: var(--text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+
+/* Hamburger */
+.hamburger { display: flex; flex-direction: column; gap: 5px; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--dark); border-radius: 2px; transition: all .32s cubic-bezier(.4,0,.2,1); transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 99;
+  background: var(--dark);
+  padding: 90px 6% 40px;
+  display: flex; flex-direction: column; gap: 4px;
+  transform: translateX(100%);
+  transition: transform .38s cubic-bezier(.4,0,.2,1);
+}
+.mobile-menu.open { transform: none; }
+.mobile-menu a {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.6rem; font-weight: 800;
+  color: rgba(255,255,255,.6);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: white; }
+.mobile-menu a:last-of-type { border-bottom: none; }
+.mob-cta {
+  margin-top: 28px;
+  background: var(--blue) !important;
+  color: white !important;
+  padding: 16px 24px !important;
+  border-radius: var(--radius) !important;
+  font-size: 1rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  text-align: center;
+  justify-content: center !important;
+  border: none !important;
+}
+.mob-cta:hover { background: var(--navy) !important; }
+
+/* Desktop nav */
+.nav-desktop { display: none; }
+@media (min-width: 900px) {
+  .hamburger { display: none; }
+  .nav-desktop {
+    display: flex; align-items: center; gap: 4px; list-style: none;
+  }
+  .nav-desktop a { font-size: .85rem; font-weight: 500; color: var(--text); padding: 8px 14px; border-radius: 8px; transition: all .2s; }
+  .nav-desktop a:hover { background: var(--blue-soft); color: var(--blue); }
+  .nav-cta-btn { background: var(--blue) !important; color: white !important; border-radius: var(--radius) !important; font-weight: 700 !important; }
+  .nav-cta-btn:hover { background: var(--navy) !important; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(27,94,171,.3); }
+}
+
+/* =====================
+   HERO — MOBILE FIRST
+===================== */
+.hero {
+  background: var(--dark);
+  padding: 72px 5% 64px;
+  position: relative; overflow: hidden;
+  text-align: center;
+}
+.hero-bg-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(27,94,171,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(27,94,171,.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: gridShift 20s linear infinite;
+}
+.hero-bg-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(27,94,171,.22) 0%, transparent 70%);
+}
+@keyframes gridShift { 0% { transform: translateY(0); } 100% { transform: translateY(48px); } }
+
+/* Floating pins */
+.pin { position: absolute; width: 36px; height: 36px; background: var(--blue); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); opacity: .12; animation: floatpin 6s ease-in-out infinite; }
+.pin::after { content: ''; position: absolute; inset: 7px; background: white; border-radius: 50%; }
+.pin-1 { top: 18%; left: 8%; animation-delay: 0s; }
+.pin-2 { top: 60%; right: 8%; width: 24px; height: 24px; animation-delay: 2s; opacity: .08; }
+.pin-3 { bottom: 20%; left: 20%; width: 18px; height: 18px; animation-delay: 4s; opacity: .06; }
+@keyframes floatpin { 0%,100% { transform: rotate(-45deg) translateY(0); } 50% { transform: rotate(-45deg) translateY(-12px); } }
+
+.hero-inner { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(27,94,171,.2); border: 1px solid rgba(74,144,217,.35);
+  color: var(--blue-light); padding: 7px 16px; border-radius: 100px;
+  font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeUp .7s ease both;
+}
+.hero-badge-dot { width: 6px; height: 6px; background: var(--blue-light); border-radius: 50%; animation: pulse-dot 2s infinite; }
+@keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(1.5); } }
+
+.hero h1 { color: white; margin-bottom: 18px; animation: fadeUp .7s .1s ease both; }
+.hero h1 em { font-style: normal; color: var(--blue-light); display: block; }
+.hero-sub {
+  font-size: .95rem; color: rgba(255,255,255,.6); line-height: 1.8;
+  font-weight: 400; max-width: 500px; margin: 0 auto 36px;
+  animation: fadeUp .7s .2s ease both;
+}
+.hero-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; animation: fadeUp .7s .3s ease both; }
+.btn-hero {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--blue); color: white;
+  padding: 16px 24px; border-radius: var(--radius);
+  font-size: .95rem; font-weight: 700;
+  transition: all .3s; box-shadow: 0 8px 24px rgba(27,94,171,.4);
+  min-height: 54px;
+}
+.btn-hero:hover { background: var(--navy); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(27,94,171,.5); }
+.btn-hero-ghost {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.8);
+  padding: 15px 24px; border-radius: var(--radius);
+  font-size: .9rem; font-weight: 500;
+  border: 1px solid rgba(255,255,255,.15); transition: all .3s;
+  min-height: 54px;
+}
+.btn-hero-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.35); color: white; }
+
+.hero-trust { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; animation: fadeUp .7s .4s ease both; margin-bottom: 8px; }
+.hero-trust-pill { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); padding: 7px 14px; border-radius: 100px; font-size: .73rem; font-weight: 600; color: rgba(255,255,255,.65); }
+.hero-trust-pill-dot { width: 5px; height: 5px; background: var(--blue-light); border-radius: 50%; }
+
+/* Hero stats bar */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 0; margin-top: 44px;
+  animation: fadeUp .7s .5s ease both;
+  max-width: 420px;
+}
+.hero-stat { text-align: left; padding: 0 12px 0 0; }
+.hero-stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: white; line-height: 1; }
+.hero-stat-num span { color: var(--blue-light); }
+.hero-stat-label { font-size: .68rem; color: rgba(255,255,255,.4); margin-top: 4px; font-weight: 500; letter-spacing: .3px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+@media (min-width: 768px) {
+  .hero { text-align: left; padding: 96px 5% 80px; }
+  .hero-sub { margin-left: 0; }
+  .hero-trust { justify-content: flex-start; }
+  .hero-btns { flex-direction: row; }
+  .btn-hero, .btn-hero-ghost { width: auto; }
+  .hero-badge { margin-bottom: 28px; }
+}
+@media (min-width: 1024px) {
+  .hero { padding: 110px 5% 80px; min-height: 90vh; display: flex; align-items: center; }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .hero-visual { position: relative; padding-left: 40px; margin-top: -32px; }
+  .hero-stat-num { font-size: 2.2rem; }
+}
+
+/* Hero visual mockup */
+.hero-mockup {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 32px;
+}
+.mockup-search { display: flex; align-items: center; gap: 10px; background: white; border-radius: 24px; padding: 10px 18px; margin-bottom: 16px; }
+.mockup-search-icon { font-size: .9rem; }
+.mockup-search span { font-size: .82rem; color: var(--text); font-weight: 500; }
+.mockup-result { display: flex; align-items: center; gap: 12px; padding: 12px; border-bottom: 1px solid rgba(255,255,255,.06); border-radius: 8px; transition: background .2s; }
+.mockup-result:hover { background: rgba(255,255,255,.04); }
+.mockup-result:last-child { border-bottom: none; }
+.mockup-rank { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 800; flex-shrink: 0; }
+.rank-1 { background: var(--blue); color: white; }
+.rank-2 { background: var(--blue-light); color: white; }
+.rank-3 { background: rgba(255,255,255,.15); color: rgba(255,255,255,.5); }
+.mockup-name { font-size: .82rem; font-weight: 700; color: white; }
+.mockup-detail { font-size: .7rem; color: rgba(255,255,255,.4); margin-top: 2px; }
+.mockup-stars { color: #F59E0B; font-size: .7rem; }
+.mockup-not-found { text-align: center; padding: 12px; font-size: .75rem; color: rgba(255,255,255,.25); font-style: italic; }
+.mockup-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(27,94,171,.3); border: 1px solid rgba(74,144,217,.3); color: var(--blue-light); padding: 4px 10px; border-radius: 6px; font-size: .65rem; font-weight: 700; margin-top: 4px; }
+
+@media (min-width: 1024px) {
+  .hero-mockup { margin-top: 0; }
+}
+
+/* =====================
+   TOOLS BAR — MOBILE FIRST
+===================== */
+.tools-bar {
+  background: var(--blue-pale);
+  border-bottom: 1px solid rgba(27,94,171,.1);
+  padding: 16px 5%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; flex-wrap: wrap;
+}
+.tools-bar-label { font-size: .72rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 1.5px; margin-right: 4px; }
+.tool-pill { display: flex; align-items: center; gap: 6px; background: white; border: 1px solid rgba(27,94,171,.12); padding: 6px 14px; border-radius: 100px; font-size: .75rem; font-weight: 600; color: var(--navy); }
+.tool-pill-dot { width: 5px; height: 5px; background: var(--blue); border-radius: 50%; }
+
+/* =====================
+   SECTION BASE
+===================== */
+.section { padding: 72px 5%; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { display: flex; align-items: center; gap: 8px; font-size: .68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+.section-tag::before { content: ''; width: 20px; height: 2px; background: var(--blue); border-radius: 1px; }
+h2 span { color: var(--blue); }
+.section-sub { font-size: .92rem; color: var(--text-light); line-height: 1.8; max-width: 520px; margin-top: 12px; }
+
+/* =====================
+   PROBLEM — MOBILE FIRST
+===================== */
+.problem { background: #EDF2FA; }
+.problem-header { margin-bottom: 40px; }
+.problem-left { display: flex; flex-direction: column; gap: 0; }
+.problem-compact { display: flex; flex-direction: column; gap: 24px; margin-top: 32px; }
+.problem-compact-item { display: flex; align-items: flex-start; gap: 14px; }
+.problem-compact-icon { width: 40px; height: 40px; background: var(--blue-soft); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.problem-compact-item h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+.problem-compact-item p { font-size: .88rem; color: var(--text-light); line-height: 1.7; }
+  display: flex; align-items: flex-start; gap: 14px;
+  background: white; padding: 18px; border-radius: var(--radius);
+  border: 1px solid var(--border); transition: all .3s;
+}
+.problem-point:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+.problem-point-icon { width: 42px; height: 42px; background: var(--blue-soft); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.problem-point h4 { font-size: .92rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.problem-point p { font-size: .8rem; color: var(--text-light); line-height: 1.6; }
+.problem-visual {
+  background: white; border-radius: var(--radius-lg);
+  padding: 24px; box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.pv-header { font-size: .72rem; font-weight: 700; color: var(--text-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+.pv-search { display: flex; align-items: center; gap: 8px; background: #F1F3F4; border-radius: 20px; padding: 10px 16px; margin-bottom: 16px; }
+.pv-search span { font-size: .82rem; color: var(--dark); }
+.pv-result { display: flex; align-items: center; gap: 12px; padding: 12px; border-bottom: 1px solid var(--border); }
+.pv-result:last-child { border-bottom: none; }
+.pv-rank { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 800; flex-shrink: 0; }
+.pv-rank-1 { background: var(--blue); color: white; }
+.pv-rank-2 { background: var(--blue-light); color: white; }
+.pv-rank-3 { background: #CBD5E1; color: #64748B; }
+.pv-name { font-size: .84rem; font-weight: 600; color: var(--dark); }
+.pv-detail { font-size: .7rem; color: var(--text-light); margin-top: 2px; }
+.pv-stars { color: #F59E0B; font-size: .7rem; }
+.pv-invisible { text-align: center; padding: 12px; font-size: .75rem; color: #94A3B8; font-style: italic; }
+
+@media (min-width: 1024px) {
+  .problem .section-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+}
+
+/* =====================
+   SERVICES — MOBILE FIRST
+===================== */
+.services { background: white; }
+.services-header { margin-bottom: 36px; }
+.services-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.tab-btn {
+  padding: 9px 18px; border-radius: 8px;
+  background: var(--off-white); color: var(--text-light);
+  font-size: .82rem; font-weight: 600; border: 2px solid transparent;
+  transition: all .2s; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+.tab-btn.active, .tab-btn:hover { background: var(--blue-pale); border-color: var(--blue); color: var(--blue); }
+.service-panel { display: none; }
+.service-panel.active { display: flex; flex-direction: column; gap: 24px; }
+.service-panel-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  padding: 28px; color: white;
+  order: -1;
+}
+.service-panel-card-icon { font-size: 2rem; margin-bottom: 14px; }
+.service-panel-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.service-panel-card p { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 20px; }
+.service-panel-card-list { display: flex; flex-direction: column; gap: 8px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1); }
+.service-panel-card-item { display: flex; align-items: center; gap: 8px; font-size: .82rem; color: rgba(255,255,255,.8); }
+.service-panel-card-item::before { content: '→'; color: var(--blue-light); font-weight: 700; flex-shrink: 0; }
+.service-content h3 { font-size: 1.4rem; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+.service-content p { font-size: .88rem; color: var(--text-light); line-height: 1.8; margin-bottom: 24px; }
+.service-items { display: flex; flex-direction: column; gap: 10px; }
+.service-item { display: flex; align-items: center; gap: 10px; font-size: .87rem; font-weight: 500; color: var(--text); }
+.service-item-check { width: 20px; height: 20px; background: var(--blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 800; flex-shrink: 0; }
+
+@media (min-width: 768px) {
+  .service-panel.active { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+  .service-panel-card { order: 0; }
+}
+
+/* =====================
+   RESULTS — MOBILE FIRST
+   (replaces problem section on scroll)
+===================== */
+.results { background: var(--navy); }
+.results-header { text-align: center; max-width: 540px; margin: 0 auto 44px; }
+.results-header .section-tag { justify-content: center; color: var(--blue-light); }
+.results-header .section-tag::before { background: var(--blue-light); }
+.results-header h2 { color: white; }
+.results-header h2 span { color: var(--blue-light); }
+.results-header p { color: rgba(255,255,255,.5); margin: 0 auto; }
+.results-grid { display: flex; flex-direction: column; gap: 14px; }
+.result-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all .3s;
+}
+.result-card:hover { background: rgba(255,255,255,.07); border-color: rgba(74,144,217,.3); transform: translateY(-3px); }
+.result-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.result-card-icon { width: 44px; height: 44px; background: rgba(27,94,171,.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.result-card-name { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: 1px; }
+.result-card-num { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: white; line-height: 1; }
+.result-card-num span { color: var(--blue-light); }
+.results-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue-light); color: white;
+  padding: 16px 36px; border-radius: var(--radius);
+  font-size: .95rem; font-weight: 700;
+  transition: all .3s;
+  box-shadow: 0 8px 28px rgba(74,144,217,.3);
+}
+.results-cta:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(74,144,217,.4); }
+.result-card p { font-size: .8rem; color: rgba(255,255,255,.4); line-height: 1.6; }
+
+@media (min-width: 600px) { .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1024px) { .results-grid { grid-template-columns: repeat(4,1fr); } }
+
+/* =====================
+   PRICING — MOBILE FIRST
+===================== */
+.pricing { background: var(--dark); position: relative; overflow: hidden; }
+.pricing::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(27,94,171,.18) 0%, transparent 70%); pointer-events: none; }
+.pricing-inner { position: relative; z-index: 1; }
+.pricing-header { text-align: center; margin-bottom: 48px; }
+.pricing-header .section-tag { justify-content: center; color: var(--blue-light); }
+.pricing-header .section-tag::before { background: var(--blue-light); }
+.pricing-header h2 { color: white; }
+.pricing-header h2 span { color: var(--blue-light); }
+.pricing-header p { color: rgba(255,255,255,.45); margin: 12px auto 0; max-width: 440px; }
+.pricing-grid { display: flex; flex-direction: column; gap: 14px; }
+.price-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex; flex-direction: column;
+  transition: transform .3s;
+}
+.price-card:hover { transform: translateY(-4px); }
+.price-card.featured { background: var(--blue); border-color: var(--blue-light); position: relative; }
+.featured-tag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--blue-light); color: white;
+  font-size: .68rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 14px; border-radius: 100px; white-space: nowrap;
+}
+.price-tier { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--blue-light); margin-bottom: 8px; }
+.price-card.featured .price-tier { color: rgba(255,255,255,.75); }
+.price-name { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 800; color: white; margin-bottom: 6px; line-height: 1.2; }
+.price-desc { font-size: .82rem; color: rgba(255,255,255,.45); margin-bottom: 22px; line-height: 1.6; }
+.price-card.featured .price-desc { color: rgba(255,255,255,.75); }
+.price-amount { display: flex; align-items: baseline; gap: 3px; margin-bottom: 4px; }
+.price-eur { font-size: 1.1rem; color: rgba(255,255,255,.55); align-self: flex-start; margin-top: 5px; }
+.price-num { font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800; color: white; line-height: 1; }
+.price-period { font-size: .78rem; color: rgba(255,255,255,.4); }
+.price-note { font-size: .73rem; color: rgba(255,255,255,.35); margin-bottom: 22px; display: block; }
+.price-features { flex: 1; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+.price-features li { display: flex; align-items: center; gap: 9px; font-size: .84rem; color: rgba(255,255,255,.7); }
+.price-card.featured .price-features li { color: rgba(255,255,255,.9); }
+.price-check { width: 17px; height: 17px; background: rgba(255,255,255,.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .58rem; color: white; flex-shrink: 0; }
+.price-card.featured .price-check { background: rgba(255,255,255,.28); }
+.price-cta {
+  display: block; text-align: center; padding: 13px;
+  border-radius: 10px; font-weight: 700; font-size: .88rem;
+  border: 2px solid rgba(255,255,255,.18); color: white;
+  transition: all .2s; font-family: 'DM Sans', sans-serif;
+}
+.price-cta:hover { border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.07); }
+.price-card.featured .price-cta { background: white; color: var(--blue); border-color: white; }
+.price-card.featured .price-cta:hover { background: var(--blue-pale); }
+
+@media (min-width: 640px) { .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (min-width: 1100px) { .pricing-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* =====================
+   WHY — MOBILE FIRST
+===================== */
+.why { background: var(--off-white); }
+.why-header { margin-bottom: 36px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.why-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 18px 16px;
+  transition: all .3s; position: relative; overflow: hidden;
+}
+.why-card h3 { font-size: .85rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+.why-card p { font-size: .75rem; color: var(--text-light); line-height: 1.6; }
+.why-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--blue-light)); transform: scaleX(0); transition: transform .3s; transform-origin: left; }
+.why-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.why-card:hover::before { transform: scaleX(1); }
+.why-card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 14px; transition: background .3s; }
+.why-card:hover .why-card-icon { background: var(--blue-pale) !important; }
+.why-card h3 { font-size: .88rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.why-card p { font-size: .76rem; color: var(--text-light); line-height: 1.6; }
+
+@media (min-width: 768px) { .why-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; grid-auto-rows: min-content; } .why-card { align-self: start; height: auto; } }
+@media (min-width: 1024px) {
+  .why-grid { gap: 14px; }
+  .why-card { padding: 20px 18px; }
+  .why-card h3 { font-size: 1rem; }
+  .why-card p { font-size: .88rem; }
+}
+
+/* =====================
+   HOW — MOBILE FIRST
+===================== */
+.how { background: white; }
+.how-header { text-align: center; max-width: 520px; margin: 0 auto 48px; }
+.how-header .section-tag { justify-content: center; }
+.steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+.steps::before { content: ''; position: absolute; left: 27px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--blue-light)); }
+.step { display: flex; align-items: flex-start; gap: 20px; padding: 0 0 32px 0; position: relative; }
+.step:last-child { padding-bottom: 0; }
+.step-num { width: 54px; height: 54px; background: var(--blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; flex-shrink: 0; position: relative; z-index: 1; box-shadow: 0 0 0 6px var(--blue-pale); }
+.step-body { padding-top: 12px; }
+.step-body h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.step-body p { font-size: .84rem; color: var(--text-light); line-height: 1.7; }
+
+@media (min-width: 768px) {
+  .steps { flex-direction: row; gap: 0; }
+  .steps::before { top: 27px; left: 0; right: 0; bottom: auto; width: auto; height: 2px; }
+  .step { flex-direction: column; align-items: center; text-align: center; padding: 0 16px; flex: 1; }
+  .step-body { padding-top: 20px; }
+}
+
+/* =====================
+   CONTACT — MOBILE FIRST
+===================== */
+.contact { background: var(--blue-pale); }
+.contact-header { margin-bottom: 32px; }
+.contact-info-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.contact-info-item { display: flex; align-items: center; gap: 12px; background: white; padding: 14px 16px; border-radius: var(--radius); border: 1px solid var(--border); min-height: 56px; }
+.contact-info-icon { width: 36px; height: 36px; background: var(--blue); color: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .9rem; flex-shrink: 0; }
+.contact-info-label { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 2px; }
+.contact-info-val { font-size: .88rem; font-weight: 600; color: var(--dark); }
+.contact-form-card { background: white; border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.contact-form-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.contact-form-card .form-sub { font-size: .8rem; color: var(--text-light); margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 6px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 13px 15px;
+  border: 1.5px solid var(--border); border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif; font-size: .87rem;
+  color: var(--dark); background: var(--off-white);
+  outline: none; transition: border-color .2s, box-shadow .2s;
+  -webkit-appearance: none; min-height: 50px;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,94,171,.1); background: white; }
+.form-group textarea { min-height: 90px; resize: vertical; }
+.form-submit {
+  width: 100%; padding: 15px;
+  background: var(--blue); color: white; border: none;
+  border-radius: var(--radius); font-family: 'DM Sans', sans-serif;
+  font-size: .9rem; font-weight: 700; cursor: pointer;
+  transition: all .3s; min-height: 52px;
+  box-shadow: 0 6px 20px rgba(27,94,171,.3);
+}
+.form-submit:hover { background: var(--navy); transform: translateY(-1px); box-shadow: 0 10px 28px rgba(27,94,171,.4); }
+
+@media (min-width: 1024px) {
+  .contact .section-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+}
+
+/* =====================
+   FOOTER — MOBILE FIRST
+===================== */
+footer { background: var(--dark); padding: 56px 5% 24px; color: rgba(255,255,255,.35); }
+.footer-top { display: flex; flex-direction: column; gap: 36px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.footer-logo-text .map { color: rgba(255,255,255,.8); }
+.footer-logo-text .leads { color: var(--blue-light); }
+.footer-brand-text { font-size: .78rem; line-height: 1.8; color: rgba(255,255,255,.3); font-weight: 400; }
+.footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.footer-col h4 { font-size: .62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 14px; }
+.footer-col a { display: block; font-size: .78rem; color: rgba(255,255,255,.25); margin-bottom: 8px; transition: color .2s; }
+.footer-col a:hover { color: var(--blue-light); }
+.footer-bottom { display: flex; flex-direction: column; gap: 6px; font-size: .7rem; }
+.footer-bottom a { color: rgba(255,255,255,.2); transition: color .2s; }
+.footer-bottom a:hover { color: rgba(255,255,255,.4); }
+
+@media (min-width: 768px) {
+  .footer-top { flex-direction: row; gap: 60px; align-items: flex-start; }
+  .footer-brand { flex: 1.5; }
+  .footer-cols { flex: 2; grid-template-columns: repeat(3,1fr); }
+  .footer-bottom { flex-direction: row; justify-content: space-between; }
+}
+
+/* =====================
+   FLOATING BUTTONS
+===================== */
+.float-btns { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 90; }
+.float-btn { width: 50px; height: 50px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 20px rgba(0,0,0,.2); transition: transform .25s, box-shadow .25s; }
+.float-btn:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+.float-wa { background: #25D366; }
+.float-ml { background: var(--blue); }
+
+/* =====================
+   MODAL — bottom sheet mobile
+===================== */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); backdrop-filter: blur(6px); z-index: 200; display: none; align-items: flex-end; justify-content: center; }
+.modal-overlay.open { display: flex; }
+.modal { background: white; border-radius: 20px 20px 0 0; padding: 20px 20px 36px; width: 100%; max-height: 88vh; overflow-y: auto; animation: slideUp .35s ease; position: relative; }
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.modal-handle { width: 36px; height: 3px; background: var(--border); border-radius: 2px; margin: 0 auto 20px; }
+.modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; background: var(--off-white); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .85rem; color: var(--text-light); cursor: pointer; }
+.modal h3 { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+.modal-sub { font-size: .8rem; color: var(--text-light); margin-bottom: 24px; }
+@media (min-width: 600px) {
+  .modal-overlay { align-items: center; padding: 20px; }
+  .modal { border-radius: 20px; max-width: 460px; animation: modalIn .3s ease; max-height: none; }
+  @keyframes modalIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+  .modal-handle { display: none; }
+}
+</style>
 </head>
 <body>
-    <article>
-        <h1>Estamos mejorando</h1>
-        <p>Estamos trabajando para ofrecerte una mejor experiencia. Volveremos muy pronto.</p>
-        <p>&mdash; El equipo de desarrollo</p>
-    </article>
+
+<!-- SCHEMA MARKUP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MapLeads",
+  "description": "Agencia especializada en SEO Local y optimización de Google Business Profile en la Costa del Sol. Ayudamos a negocios locales a aparecer en el TOP 3 de Google Maps.",
+  "url": "https://www.mapleads.es",
+  "telephone": "+34000000000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Marbella",
+    "addressRegion": "Málaga",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Marbella" },
+    { "@type": "City", "name": "Estepona" },
+    { "@type": "City", "name": "Fuengirola" },
+    { "@type": "City", "name": "Málaga" }
+  ],
+  "serviceType": ["SEO Local", "Google Business Profile", "Posicionamiento Google Maps"]
+}
+</script>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#inicio" class="nav-logo" aria-label="MapLeads - SEO Local Costa del Sol">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name"><span class="map">MAP</span><span class="leads">LEADS</span></span>
+      <span class="nav-logo-sub">SEO Local · Costa del Sol</span>
+    </div>
+  </a>
+  <ul class="nav-desktop">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#por-que">Por qué MapLeads</a></li>
+    <li><a href="#proceso">Cómo funciona</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#contacto" class="nav-cta-btn">Auditoría gratuita →</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="#servicios">Servicios <span>→</span></a>
+  <a href="#por-que">Por qué MapLeads <span>→</span></a>
+  <a href="#proceso">Cómo funciona <span>→</span></a>
+  <a href="#precios">Precios <span>→</span></a>
+  <a href="#contacto">Contacto <span>→</span></a>
+  <a href="#contacto" class="mob-cta">Auditoría gratuita →</a>
+</nav>
+
+<!-- HERO -->
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="pin pin-1"></div>
+  <div class="pin pin-2"></div>
+  <div class="pin pin-3"></div>
+  <div class="hero-inner section-inner">
+    <div>
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Especialistas en SEO Local · Costa del Sol</div>
+      <h1>Tus clientes te buscan en Google.<em>¿Te encuentran?</em></h1>
+      <p class="hero-sub">Optimizamos tu perfil de Google para que aparezcas en los primeros resultados del mapa — más visitas, más llamadas, más clientes.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-hero">📍 Auditoría gratuita de tu perfil</a>
+        <a href="#servicios" class="btn-hero-ghost">Ver servicios →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">91<span>%</span></div><div class="hero-stat-label">visitas vienen<br>de Google</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">3<span>×</span></div><div class="hero-stat-label">más llamadas con<br>perfil optimizado</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">Top<span>3</span></div><div class="hero-stat-label">objetivo en<br>Google Maps</div></div>
+      </div>
+    </div>
+    <div class="hero-visual rev">
+      <div class="hero-mockup">
+        <div class="mockup-search">
+          <span class="mockup-search-icon">🔍</span>
+          <span>dentista en marbella</span>
+        </div>
+        <div class="mockup-result">
+          <div class="mockup-rank rank-1">1</div>
+          <div>
+            <div class="mockup-name">Clínica Dental Victoria ✓</div>
+            <div class="mockup-detail"><span class="mockup-stars">★★★★★</span> 4.9 · 127 reseñas · Abierto ahora</div>
+            <div class="mockup-badge">📍 Optimizado por MapLeads</div>
+          </div>
+        </div>
+        <div class="mockup-result">
+          <div class="mockup-rank rank-2">2</div>
+          <div>
+            <div class="mockup-name">Dental Marbella Centro</div>
+            <div class="mockup-detail"><span class="mockup-stars">★★★★☆</span> 4.2 · 43 reseñas</div>
+          </div>
+        </div>
+        <div class="mockup-result">
+          <div class="mockup-rank rank-3">3</div>
+          <div>
+            <div class="mockup-name">Clínica Dr. González</div>
+            <div class="mockup-detail"><span class="mockup-stars">★★★★☆</span> 4.0 · 28 reseñas</div>
+          </div>
+        </div>
+        <div class="mockup-not-found">⚠ Tu negocio no aparece en el TOP 3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS BAR -->
+<div class="tools-bar">
+  <span class="tools-bar-label">Herramientas que usamos</span>
+  <div class="tool-pill"><span class="tool-pill-dot"></span>Google Business Profile</div>
+  <div class="tool-pill"><span class="tool-pill-dot"></span>Local Falcon</div>
+  <div class="tool-pill"><span class="tool-pill-dot"></span>Google Search Console</div>
+  <div class="tool-pill"><span class="tool-pill-dot"></span>Google Analytics</div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section problem" id="problema">
+  <div class="section-inner">
+    <div class="problem-left rev">
+      <div class="section-tag">El problema</div>
+      <h2>Tu competencia te está <span>comiendo el terreno</span></h2>
+      <p class="section-sub">El 92% de los usuarios elige un negocio que aparece en la primera página de Google Maps. Si no estás ahí, no existes para ellos.</p>
+      <div class="problem-compact">
+        <div class="problem-compact-item">
+          <div class="problem-compact-icon">📉</div>
+          <div>
+            <h4>Perfil desactualizado o incompleto</h4>
+            <p>Fotos antiguas, horarios incorrectos, sin categorías correctas.<br>Google penaliza los perfiles descuidados.</p>
+          </div>
+        </div>
+        <div class="problem-compact-item">
+          <div class="problem-compact-icon">⭐</div>
+          <div>
+            <h4>Reseñas sin gestionar</h4>
+            <p>Las reseñas sin respuesta generan desconfianza. Responderlas bien<br>es marketing gratuito.</p>
+          </div>
+        </div>
+        <div class="problem-compact-item">
+          <div class="problem-compact-icon">📊</div>
+          <div>
+            <h4>No sabes dónde posicionas</h4>
+            <p>Sin datos no puedes mejorar. Necesitas ver cómo apareces en tu<br>zona geográfica en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-visual rev">
+      <div class="pv-header">Búsqueda: "dentista en marbella" — resultado actual</div>
+      <div class="pv-search"><span>🔍</span><span>dentista en marbella</span></div>
+      <div class="pv-result">
+        <div class="pv-rank pv-rank-1">1</div>
+        <div><div class="pv-name">Clínica Dental Costa Sol</div><div class="pv-detail"><span class="pv-stars">★★★★★</span> 4.9 · 127 reseñas</div></div>
+      </div>
+      <div class="pv-result">
+        <div class="pv-rank pv-rank-2">2</div>
+        <div><div class="pv-name">Implantes Marbella</div><div class="pv-detail"><span class="pv-stars">★★★★☆</span> 4.4 · 89 reseñas</div></div>
+      </div>
+      <div class="pv-result">
+        <div class="pv-rank pv-rank-3">3</div>
+        <div><div class="pv-name">Dental Navarro</div><div class="pv-detail"><span class="pv-stars">★★★★☆</span> 4.2 · 56 reseñas</div></div>
+      </div>
+      <div class="pv-invisible">⚠ Tu negocio no aparece en el TOP 3 — tus clientes se van a la competencia</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="servicios">
+  <div class="section-inner">
+    <div class="services-header rev">
+      <div class="section-tag">Lo que hacemos</div>
+      <h2>Servicios de <span>SEO Local</span></h2>
+      <p class="section-sub">Todo lo que necesitas para dominar Google Maps en tu zona — desde la optimización inicial hasta la gestión mensual continua.</p>
+    </div>
+    <div class="services-tabs">
+      <button class="tab-btn active" data-tab="opt">📍 Optimización GBP</button>
+      <button class="tab-btn" data-tab="foto">📸 Reportaje Fotográfico</button>
+      <button class="tab-btn" data-tab="gestion">📅 Gestión Mensual</button>
+      <button class="tab-btn" data-tab="informes">📊 Informes</button>
+    </div>
+    <div class="service-panel active" id="tab-opt">
+      <div class="service-content">
+        <h3>Optimización Completa del Perfil GBP</h3>
+        <p>Auditamos y optimizamos tu ficha de Google Business Profile para que Google te identifique como el negocio más relevante de tu zona en la Costa del Sol.</p>
+        <div class="service-items">
+          <div class="service-item"><div class="service-item-check">✓</div>Auditoría inicial completa del perfil</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Categorías principales y secundarias optimizadas</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Descripción con keywords locales (Marbella, Costa del Sol…)</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Catálogo de servicios con precios y descripciones</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Código QR + Guía de Respuesta a reseñas</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Alta en principales directorios locales</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Informe de posicionamiento inicial con Local Falcon</div>
+        </div>
+      </div>
+      <div class="service-panel-card">
+        <div class="service-panel-card-icon">📍</div>
+        <h4>Optimización GBP · Costa del Sol</h4>
+        <p>Un perfil optimizado puede triplicar las llamadas y visitas de tu negocio en la Costa del Sol en pocas semanas.</p>
+        <div class="service-panel-card-list">
+          <div class="service-panel-card-item">Análisis geolocalizado con Local Falcon</div>
+          <div class="service-panel-card-item">Keywords de tu sector y zona</div>
+          <div class="service-panel-card-item">Configuración NAP consistente</div>
+        </div>
+      </div>
+    </div>
+    <div class="service-panel" id="tab-foto">
+      <div class="service-content">
+        <h3>Reportaje Fotográfico del Negocio</h3>
+        <p>Las fotos son el factor visual más importante de tu ficha. Negocios con fotos de calidad reciben un 42% más de solicitudes de ruta y un 35% más de clics al sitio web.</p>
+        <div class="service-items">
+          <div class="service-item"><div class="service-item-check">✓</div>Reportaje fotográfico con cámara réflex</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Hasta 15 fotos seleccionadas y editadas</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Geoetiquetado y metadatos para SEO</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Subida estratégica al perfil de Google</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Entrega de archivos en alta resolución</div>
+        </div>
+      </div>
+      <div class="service-panel-card">
+        <div class="service-panel-card-icon">📸</div>
+        <h4>Reportaje Fotográfico Profesional</h4>
+        <p>Fotos con cámara réflex — no stock photos. Autenticidad que genera confianza y posicionamiento en Google.</p>
+        <div class="service-panel-card-list">
+          <div class="service-panel-card-item">Interior, exterior y equipo</div>
+          <div class="service-panel-card-item">Optimizadas para Google Maps</div>
+          <div class="service-panel-card-item">Entrega en 48h</div>
+        </div>
+      </div>
+    </div>
+    <div class="service-panel" id="tab-gestion">
+      <div class="service-content">
+        <h3>Gestión Mensual Continua del GBP</h3>
+        <p>El algoritmo de Google premia los perfiles activos. Gestionamos tu ficha cada mes para que nunca pierdas posición frente a la competencia en la Costa del Sol.</p>
+        <div class="service-items">
+          <div class="service-item"><div class="service-item-check">✓</div>3-4 publicaciones mensuales con keywords locales</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Gestión y respuesta estratégica a reseñas</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Actualización de horarios y novedades</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Seguimiento con Local Falcon (3-5 keywords)</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Análisis de competidores mensual (Pro)</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Informe mensual de métricas GBP</div>
+        </div>
+      </div>
+      <div class="service-panel-card">
+        <div class="service-panel-card-icon">📅</div>
+        <h4>Gestión Mensual · Sin permanencia</h4>
+        <p>Presencia activa y constante en Google Maps mes a mes. Cancela cuando quieras — confiamos en los resultados.</p>
+        <div class="service-panel-card-list">
+          <div class="service-panel-card-item">Sin contrato de permanencia</div>
+          <div class="service-panel-card-item">Informes mensuales incluidos</div>
+          <div class="service-panel-card-item">Comunicación directa contigo</div>
+        </div>
+      </div>
+    </div>
+    <div class="service-panel" id="tab-informes">
+      <div class="service-content">
+        <h3>Informes y Análisis de Posicionamiento</h3>
+        <p>Con Local Falcon medimos tu posición real en cada punto de tu zona de influencia — no solo en tu dirección exacta. Datos geolocalizados que te muestran exactamente dónde ganar terreno.</p>
+        <div class="service-items">
+          <div class="service-item"><div class="service-item-check">✓</div>Análisis geolocalizado de tu zona de influencia</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Seguimiento de keywords locales clave</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Métricas GBP: visitas, llamadas, clics</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Comparativa mensual con tu competencia</div>
+          <div class="service-item"><div class="service-item-check">✓</div>Evolución de ARP y SoLV</div>
+        </div>
+      </div>
+      <div class="service-panel-card">
+        <div class="service-panel-card-icon">📊</div>
+        <h4>Datos reales, no estimaciones</h4>
+        <p>Local Falcon te muestra en qué calles apareces en el TOP 3 y en cuáles no. Sin adivinanzas, sin vaguedades.</p>
+        <div class="service-panel-card-list">
+          <div class="service-panel-card-item">Mapas de calor geolocalizados</div>
+          <div class="service-panel-card-item">ARP y SoLV mensuales</div>
+          <div class="service-panel-card-item">Informes en PDF descargables</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section results">
+  <div class="section-inner">
+    <div class="results-header rev">
+      <div class="section-tag">Resultados</div>
+      <h2>Lo que consigues con un <span>perfil optimizado</span></h2>
+      <p class="section-sub">Datos reales de lo que genera un Google Business Profile bien gestionado.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card rev"><div class="result-card-top"><div class="result-card-icon">👁️</div><div class="result-card-name">Visibilidad</div></div><div class="result-card-num">3<span>×</span></div><p>más visibilidad en Google Maps frente a perfiles sin optimizar</p></div>
+      <div class="result-card rev"><div class="result-card-top"><div class="result-card-icon">📞</div><div class="result-card-name">Llamadas</div></div><div class="result-card-num">+<span>60%</span></div><p>más llamadas directas desde el perfil en los primeros 90 días</p></div>
+      <div class="result-card rev"><div class="result-card-top"><div class="result-card-icon">🗺️</div><div class="result-card-name">Rutas</div></div><div class="result-card-num">+<span>42%</span></div><p>más solicitudes de ruta hacia tu negocio desde Google Maps</p></div>
+      <div class="result-card rev"><div class="result-card-top"><div class="result-card-icon">🌐</div><div class="result-card-name">Web</div></div><div class="result-card-num">+<span>35%</span></div><p>más clics a tu sitio web desde la ficha de Google</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px" class="rev">
+      <a href="#contacto" class="results-cta">📍 Optimizar mi perfil ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="precios">
+  <div class="section-inner pricing-inner">
+    <div class="pricing-header rev">
+      <div class="section-tag">Tarifas</div>
+      <h2>Precios claros, <span>sin sorpresas</span></h2>
+      <p>Sin permanencias. Sin letra pequeña. Cancela cuando quieras.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card rev" style="display:flex;flex-direction:column">
+        <div class="price-tier">Pago único</div>
+        <div class="price-name">Optimización</div>
+        <div class="price-desc">Para negocios que quieren empezar con buen pie en Google Maps.</div>
+        <div class="price-amount"><span class="price-eur">€</span><span class="price-num">149</span></div>
+        <span class="price-note">Pago único · Sin mensualidad</span>
+        <ul class="price-features" style="flex:1">
+          <li><span class="price-check">✓</span>Auditoría inicial del perfil</li>
+          <li><span class="price-check">✓</span>Optimización completa GBP</li>
+          <li><span class="price-check">✓</span>Categorías y keywords locales</li>
+          <li><span class="price-check">✓</span>Catálogo de servicios optimizado</li>
+          <li><span class="price-check">✓</span>Código QR + Guía de Respuesta</li>
+          <li><span class="price-check">✓</span>Alta en directorios locales</li>
+        </ul>
+        <a href="#contacto" class="price-cta">Empezar ahora</a>
+      </div>
+      <div class="price-card featured rev" style="display:flex;flex-direction:column">
+        <div class="featured-tag">⭐ Más popular</div>
+        <div class="price-tier">Pago único</div>
+        <div class="price-name">Full Service</div>
+        <div class="price-desc">Para negocios que quieren el máximo impacto visual.</div>
+        <div class="price-amount"><span class="price-eur">€</span><span class="price-num">299</span></div>
+        <span class="price-note">Pago único · Sin mensualidad</span>
+        <ul class="price-features" style="flex:1">
+          <li><span class="price-check">✓</span>Todo lo del plan Optimización</li>
+          <li><span class="price-check">✓</span>Reportaje fotográfico del negocio</li>
+          <li><span class="price-check">✓</span>Hasta 15 fotos con cámara réflex</li>
+          <li><span class="price-check">✓</span>Edición y optimización para Google</li>
+          <li><span class="price-check">✓</span>Geoetiquetado y subida estratégica</li>
+          <li><span class="price-check">✓</span>Entrega en alta resolución</li>
+        </ul>
+        <a href="#contacto" class="price-cta">Empezar ahora</a>
+      </div>
+      <div class="price-card rev" style="display:flex;flex-direction:column">
+        <div class="featured-tag">⭐ Más popular</div>
+        <div class="price-tier">Mensual · Precio de lanzamiento</div>
+        <div class="price-name">Mantenimiento</div>
+        <div class="price-desc">Presencia activa y constante para mejorar tu posición en Google Maps.</div>
+        <div class="price-amount"><span class="price-eur">€</span><span class="price-num">75</span><span class="price-period">/mes</span></div>
+        <span class="price-note">Plazas limitadas · Sin permanencia</span>
+        <ul class="price-features" style="flex:1">
+          <li><span class="price-check">✓</span>3-4 publicaciones mensuales</li>
+          <li><span class="price-check">✓</span>Gestión y respuesta a reseñas</li>
+          <li><span class="price-check">✓</span>Actualización de horarios y novedades</li>
+          <li><span class="price-check">✓</span>Seguimiento Local Falcon — 3 keywords</li>
+          <li><span class="price-check">✓</span>Informe mensual de métricas GBP</li>
+        </ul>
+        <a href="#contacto" class="price-cta">Empezar ahora</a>
+      </div>
+      <div class="price-card featured rev" style="display:flex;flex-direction:column">
+        <div class="price-tier">Mensual · Precio de lanzamiento</div>
+        <div class="price-name">Mantenimiento Pro</div>
+        <div class="price-desc">Estrategia activa para crecer y adelantar a tu competencia cada mes.</div>
+        <div class="price-amount"><span class="price-eur">€</span><span class="price-num">110</span><span class="price-period">/mes</span></div>
+        <span class="price-note">Plazas limitadas · Sin permanencia</span>
+        <ul class="price-features" style="flex:1">
+          <li><span class="price-check">✓</span>Todo lo del plan Mantenimiento</li>
+          <li><span class="price-check">✓</span>Seguimiento Local Falcon — 5 keywords</li>
+          <li><span class="price-check">✓</span>Análisis de competidores mensual</li>
+          <li><span class="price-check">✓</span>Optimización según búsquedas locales</li>
+          <li><span class="price-check">✓</span>Informe con posicionamiento y competencia</li>
+        </ul>
+        <a href="#contacto" class="price-cta">Empezar ahora</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:.78rem;color:rgba(255,255,255,.3)">¿Varios locales o franquicia en la Costa del Sol? Consulta tarifas especiales.</p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section why" id="por-que">
+  <div class="section-inner">
+    <div class="why-header rev">
+      <div class="section-tag">Por qué MapLeads</div>
+      <h2>No somos una agencia <span>más</span></h2>
+      <p class="section-sub">Trabajamos exclusivamente SEO Local en la Costa del Sol. Conocemos Google Business Profile como nadie.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rev"><div class="why-card-icon" style="background:var(--blue-soft)">🎯</div><h3>Especialización total en SEO Local</h3><p>Solo hacemos SEO local y GBP. Sabemos<br>exactamente qué mueve el algoritmo de<br>Google Maps.</p></div>
+      <div class="why-card rev"><div class="why-card-icon" style="background:#F0FDF4">📍</div><h3>Datos geolocalizados reales</h3><p>Con Local Falcon medimos tu posición<br>en cada punto de tu zona, no solo<br>en tu dirección exacta.</p></div>
+      <div class="why-card rev"><div class="why-card-icon" style="background:#FFF7ED">📸</div><h3>Reportaje fotográfico propio</h3><p>Fotos con cámara réflex — sin stock photos.<br>Transmiten autenticidad y generan más<br>confianza.</p></div>
+      <div class="why-card rev"><div class="why-card-icon" style="background:#F5F3FF">📊</div><h3>Transparencia total</h3><p>Informes claros cada mes para que veas<br>exactamente qué hemos hecho y cómo ha<br>evolucionado tu posición.</p></div>
+      <div class="why-card rev"><div class="why-card-icon" style="background:#FFF1F2">💬</div><h3>Gestión de reseñas estratégica</h3><p>Respondemos con estrategia, no con copy-<br>paste. Cada reseña es una oportunidad de<br>marketing.</p></div>
+      <div class="why-card rev"><div class="why-card-icon" style="background:var(--blue-soft)">🚀</div><h3>Sin permanencias</h3><p>Confiamos en los resultados, no en los<br>contratos. Cancela cuando quieras.<br><span style="font-size:.72rem;color:var(--text-light)">Garantía 90 días.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section how" id="proceso">
+  <div class="section-inner">
+    <div class="how-header rev">
+      <div class="section-tag">El proceso</div>
+      <h2>Así <span>trabajamos</span></h2>
+      <p class="section-sub" style="margin:0 auto">En 4 pasos, tu negocio empieza a aparecer donde tus clientes te buscan en la Costa del Sol.</p>
+    </div>
+    <div class="steps">
+      <div class="step rev">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Auditoría gratuita</h3>
+          <p>Analizamos tu perfil actual y te decimos exactamente dónde estás y qué mejorar en tu zona de la Costa del Sol.</p>
+        </div>
+      </div>
+      <div class="step rev">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Estrategia personalizada</h3>
+          <p>Diseñamos un plan específico para tu sector y tu zona geográfica — con las keywords locales que más convierten.</p>
+        </div>
+      </div>
+      <div class="step rev">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Optimización y publicación</h3>
+          <p>Aplicamos mejoras, subimos fotos profesionales, configuramos el perfil y activamos la estrategia de contenido.</p>
+        </div>
+      </div>
+      <div class="step rev">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Seguimiento mensual</h3>
+          <p>Monitorizamos resultados con Local Falcon, generamos informes y seguimos mejorando tu posición mes a mes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contacto">
+  <div class="section-inner">
+    <div class="rev">
+      <div class="section-tag">Contacto</div>
+      <h2>Auditoría gratuita de tu <span>perfil de Google</span></h2>
+      <p class="section-sub" style="margin-bottom:28px">Sin compromiso. Te analizamos el perfil y te decimos exactamente qué mejorar — gratis.</p>
+      <div class="contact-info-items">
+        <a href="mailto:hola@mapleads.es" class="contact-info-item">
+          <div class="contact-info-icon">📧</div>
+          <div><div class="contact-info-label">Email</div><div class="contact-info-val">hola@mapleads.es</div></div>
+        </a>
+        <a href="https://wa.me/34600000000" class="contact-info-item">
+          <div class="contact-info-icon">💬</div>
+          <div><div class="contact-info-label">WhatsApp</div><div class="contact-info-val">Respuesta en menos de 24h</div></div>
+        </a>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div><div class="contact-info-label">Zona de servicio</div><div class="contact-info-val">Costa del Sol · Marbella · Estepona · Málaga</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card rev">
+      <h3>Pide tu auditoría gratuita</h3>
+      <p class="form-sub">Analizamos tu GBP sin coste y sin compromiso. Te respondemos en menos de 24h.</p>
+      <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required></div>
+      <div class="form-group"><label for="negocio">Nombre del negocio</label><input type="text" id="negocio" name="negocio" placeholder="Tu clínica, restaurante, tienda…" required></div>
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required></div>
+      <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="600 000 000" autocomplete="tel"></div>
+      <div class="form-group">
+        <label for="sector">Sector</label>
+        <select id="sector" name="sector">
+          <option value="">Selecciona tu sector</option>
+          <option>Clínica dental</option>
+          <option>Fisioterapia / Salud</option>
+          <option>Restaurante / Bar</option>
+          <option>Comercio local</option>
+          <option>Inmobiliaria</option>
+          <option>Hotel / Alojamiento</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="mensaje">¿Cuál es tu principal problema con Google Maps?</label><textarea id="mensaje" name="mensaje" placeholder="Ej: No aparezco cuando buscan mi tipo de negocio en Marbella…"></textarea></div>
+      <button type="submit" class="form-submit">📍 Solicitar auditoría gratuita →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="nav-logo-text footer-logo-text">
+          <span class="nav-logo-name"><span class="map">MAP</span><span class="leads">LEADS</span></span>
+        </div>
+      </div>
+      <p class="footer-brand-text">Especialistas en SEO Local y Google Business Profile en la Costa del Sol. Ayudamos a negocios locales de Marbella, Estepona y Málaga a aparecer en el TOP 3 de Google Maps.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="#">Optimización GBP</a>
+        <a href="#">Reportaje Fotográfico</a>
+        <a href="#">Gestión Mensual</a>
+        <a href="#">Informes Local Falcon</a>
+      </div>
+      <div class="footer-col">
+        <h4>Zonas</h4>
+        <a href="#">SEO Local Marbella</a>
+        <a href="#">SEO Local Estepona</a>
+        <a href="#">SEO Local Fuengirola</a>
+        <a href="#">SEO Local Málaga</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:hola@mapleads.es">hola@mapleads.es</a>
+        <a href="https://wa.me/34600000000">WhatsApp</a>
+        <a href="#">Costa del Sol, Málaga</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 MapLeads · SEO Local Costa del Sol · Todos los derechos reservados</span>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Aviso legal</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT -->
+<div class="float-btns" aria-label="Contacto rápido">
+  <a href="https://wa.me/34600000000" class="float-btn float-wa" aria-label="WhatsApp MapLeads">💬</a>
+  <a href="#contacto" class="float-btn float-ml" aria-label="Auditoría gratuita">📍</a>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+    <h3>Auditoría gratuita</h3>
+    <p class="modal-sub">Analizamos tu perfil de Google sin coste · Costa del Sol</p>
+    <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre" autocomplete="name"></div>
+    <div class="form-group"><label>Negocio</label><input type="text" placeholder="Nombre de tu negocio"></div>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com" autocomplete="email"></div>
+    <button class="form-submit" onclick="closeModal()">Solicitar auditoría gratuita →</button>
+  </div>
+</div>
+
+<script>
+// HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+    document.body.style.overflow = '';
+  });
+});
+
+// STICKY NAV
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+// TABS
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// REVEAL
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.rev, .rev-l, .rev-r').forEach(el => obs.observe(el));
+
+// MODAL
+function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden'; return false; }
+function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
