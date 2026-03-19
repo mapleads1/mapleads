@@ -405,6 +405,19 @@
     .m-close { width:32px; height:32px; background:var(--off); border:none; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:.9rem; color:var(--text-mid); transition:background var(--t); flex-shrink:0; }
     .m-close:hover { background:var(--border); }
     @media(min-width:600px) { .mbg{align-items:center;padding:20px} .mbox{border-radius:16px;max-width:460px;padding:28px;max-height:none} .m-handle{display:none} }
+
+    /* COOKIE BANNER */
+    #cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:3000; background:var(--dark-2); border-top:1px solid rgba(255,255,255,.08); padding:16px 20px; display:flex; flex-direction:column; gap:12px; transform:translateY(100%); transition:transform .4s cubic-bezier(.4,0,.2,1); }
+    #cookie-banner.show { transform:none; }
+    #cookie-banner p { font-size:.78rem; color:rgba(255,255,255,.55); line-height:1.7; margin:0; }
+    #cookie-banner p a { color:var(--blue-light); text-decoration:underline; }
+    .cookie-btns { display:flex; gap:8px; flex-wrap:wrap; flex-shrink:0; }
+    .cookie-btns button { padding:9px 20px; border-radius:var(--r); font-size:.8rem; font-weight:700; cursor:pointer; transition:all var(--t); font-family:inherit; }
+    .ck-accept { background:var(--blue); color:white; border:none; }
+    .ck-accept:hover { background:var(--navy); }
+    .ck-reject { background:transparent; color:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.15); }
+    .ck-reject:hover { background:rgba(255,255,255,.06); color:white; }
+    @media(min-width:600px) { #cookie-banner{flex-direction:row;align-items:center;justify-content:space-between} }
   </style>
 </head>
 <body>
@@ -926,6 +939,10 @@
             </select>
           </div>
           <div class="fg"><label for="ct-msg">¿Cuál es tu principal problema con Google Maps?</label><textarea id="ct-msg" placeholder="Ej: No aparezco cuando buscan mi tipo de negocio en Marbella…"></textarea></div>
+          <div class="fg" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:8px">
+            <input type="checkbox" id="ct-privacy" style="width:18px;height:18px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--blue)">
+            <label for="ct-privacy" style="font-size:.78rem;color:var(--text-mid);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer">He leído y acepto la <a href="privacidad.html" style="color:var(--blue);text-decoration:underline" target="_blank">Política de privacidad</a> *</label>
+          </div>
           <p class="form-note">* Campos obligatorios · Sin compromiso · Respondemos en menos de 24h</p>
           <button class="btn-blue" style="width:100%" onclick="submitForm(this)">📍 Solicitar auditoría gratuita →</button>
         </div>
@@ -981,6 +998,15 @@
   </div>
 </footer>
 
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies para analizar el tráfico y mejorar tu experiencia. Puedes aceptar o rechazar su uso. <a href="privacidad.html">Política de privacidad</a></p>
+  <div class="cookie-btns">
+    <button class="ck-accept" onclick="cookieChoice(true)">Aceptar</button>
+    <button class="ck-reject" onclick="cookieChoice(false)">Rechazar</button>
+  </div>
+</div>
+
 <!-- FLOATING -->
 <div class="floats" aria-label="Contacto rápido">
   <a href="https://wa.me/34600805722?text=Hola%2C%20me%20interesa%20la%20auditor%C3%ADa%20gratuita" class="float f-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
@@ -1007,12 +1033,27 @@
         <option>Inmobiliaria</option><option>Otro</option>
       </select>
     </div>
+    <div class="fg" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:6px">
+      <input type="checkbox" id="m-privacy" style="width:18px;height:18px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--blue)">
+      <label for="m-privacy" style="font-size:.78rem;color:var(--text-mid);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer">He leído y acepto la <a href="privacidad.html" style="color:var(--blue);text-decoration:underline" target="_blank">Política de privacidad</a> *</label>
+    </div>
     <button class="btn-blue" style="width:100%;margin-top:6px" onclick="submitModal(this)">📍 Solicitar auditoría gratuita →</button>
   </div>
 </div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* COOKIES */
+  (function(){
+    if(!localStorage.getItem('ml_cookies')){
+      setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),1200);
+    }
+  })();
+  function cookieChoice(accepted){
+    localStorage.setItem('ml_cookies', accepted ? 'accepted' : 'rejected');
+    document.getElementById('cookie-banner').classList.remove('show');
+  }
 
   /* NAV */
   const ham = document.getElementById('ham');
@@ -1076,11 +1117,13 @@
   function submitForm(btn){
     const n=document.getElementById('ct-nom').value.trim(), ng=document.getElementById('ct-neg').value.trim(), em=document.getElementById('ct-email').value.trim();
     if(!n||!ng||!em){alert('Por favor, rellena nombre, negocio y email.');return;}
+    if(!document.getElementById('ct-privacy').checked){alert('Debes aceptar la política de privacidad.');return;}
     ok(btn,'✓ ¡Recibido! Te contactamos en menos de 24h');
   }
   function submitModal(btn){
     const n=document.getElementById('m-nom').value.trim(), ng=document.getElementById('m-neg').value.trim(), em=document.getElementById('m-email').value.trim();
     if(!n||!ng||!em){alert('Por favor, rellena nombre, negocio y email.');return;}
+    if(!document.getElementById('m-privacy').checked){alert('Debes aceptar la política de privacidad.');return;}
     ok(btn,'✓ ¡Gracias! Te contactamos pronto');
     setTimeout(closeModal,2400);
   }
