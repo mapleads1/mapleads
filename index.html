@@ -1113,19 +1113,33 @@
   document.addEventListener('keydown', e=>{if(e.key==='Escape') closeModal();});
 
   /* FORMS */
+  const FORMSPREE = 'https://formspree.io/f/mpqynloo';
   function ok(btn,msg){btn.textContent=msg;btn.disabled=true;btn.style.cssText='background:#166534!important;cursor:default;opacity:.9';}
-  function submitForm(btn){
+  function err(btn,orig){btn.textContent=orig;btn.disabled=false;}
+  async function sendToFormspree(data){
+    const res = await fetch(FORMSPREE,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});
+    if(!res.ok) throw new Error('error');
+  }
+  async function submitForm(btn){
     const n=document.getElementById('ct-nom').value.trim(), ng=document.getElementById('ct-neg').value.trim(), em=document.getElementById('ct-email').value.trim();
     if(!n||!ng||!em){alert('Por favor, rellena nombre, negocio y email.');return;}
     if(!document.getElementById('ct-privacy').checked){alert('Debes aceptar la política de privacidad.');return;}
-    ok(btn,'✓ ¡Recibido! Te contactamos en menos de 24h');
+    const orig=btn.textContent; btn.textContent='Enviando…'; btn.disabled=true;
+    try{
+      await sendToFormspree({nombre:n,negocio:ng,email:em,telefono:document.getElementById('ct-tel').value.trim(),sector:document.getElementById('ct-sector').value,mensaje:document.getElementById('ct-msg').value.trim()});
+      ok(btn,'✓ ¡Recibido! Te contactamos en menos de 24h');
+    }catch(e){alert('Hubo un error al enviar. Inténtalo de nuevo o escríbenos a hola@mapleads.es');err(btn,orig);}
   }
-  function submitModal(btn){
+  async function submitModal(btn){
     const n=document.getElementById('m-nom').value.trim(), ng=document.getElementById('m-neg').value.trim(), em=document.getElementById('m-email').value.trim();
     if(!n||!ng||!em){alert('Por favor, rellena nombre, negocio y email.');return;}
     if(!document.getElementById('m-privacy').checked){alert('Debes aceptar la política de privacidad.');return;}
-    ok(btn,'✓ ¡Gracias! Te contactamos pronto');
-    setTimeout(closeModal,2400);
+    const orig=btn.textContent; btn.textContent='Enviando…'; btn.disabled=true;
+    try{
+      await sendToFormspree({nombre:n,negocio:ng,email:em,sector:document.getElementById('m-sector').value});
+      ok(btn,'✓ ¡Gracias! Te contactamos pronto');
+      setTimeout(closeModal,2400);
+    }catch(e){alert('Hubo un error al enviar. Inténtalo de nuevo o escríbenos a hola@mapleads.es');err(btn,orig);}
   }
 </script>
 </body>
