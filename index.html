@@ -138,20 +138,23 @@
     .p3 { width:16px; height:16px; bottom:22%; left:18%; opacity:.06; animation-delay:4.5s; }
     @keyframes floatPin { 0%,100%{transform:rotate(-45deg) translateY(0)} 50%{transform:rotate(-45deg) translateY(-14px)} }
     .hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr; gap:40px; align-items:center; }
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(27,94,171,.2); border:1px solid rgba(74,144,217,.3); color:var(--blue-light); padding:7px 16px; border-radius:100px; font-size:.72rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:20px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(27,94,171,.2); border:1px solid rgba(74,144,217,.3); color:var(--blue-light); padding:7px 16px; border-radius:100px; font-size:.72rem; font-weight:700; letter-spacing:.4px; text-transform:uppercase; margin-bottom:20px; max-width:100%; white-space:normal; }
+    @media(min-width:1024px) { .hero-badge { letter-spacing:1.2px; white-space:nowrap; } }
     .badge-dot { width:6px; height:6px; background:var(--blue-light); border-radius:50%; animation:pulseDot 2.2s infinite; flex-shrink:0; }
     @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.7)} }
-    #hero h1 { color:white; margin-bottom:16px; }
+    #hero h1 { color:white; margin-bottom:18px; }
     #hero h1 em { font-style:normal; color:var(--blue-light); display:block; }
+    .hero-pain { color:rgba(255,255,255,.72); font-size:clamp(.95rem,2.2vw,1.22rem); font-weight:600; line-height:1.5; max-width:420px; margin-bottom:14px; }
     .hero-sub { color:rgba(255,255,255,.55); font-size:.95rem; line-height:1.85; max-width:480px; margin-bottom:32px; }
     .hero-btns { display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
+    .hero-btns a { display:flex; width:100%; }
     .hero-stats { display:grid; grid-template-columns:repeat(3,1fr); background:rgba(255,255,255,.04); border:1px solid var(--border-dk); border-radius:var(--rl); overflow:hidden; max-width:420px; }
-    .hs { padding:18px 10px; text-align:center; border-right:1px solid var(--border-dk); }
+    .hs { padding:24px 10px; text-align:center; border-right:1px solid var(--border-dk); }
     .hs:last-child { border-right:none; }
     .hs-n { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; color:var(--blue-light); line-height:1; display:block; }
     .hs-l { display:block; font-size:.6rem; color:rgba(255,255,255,.32); margin-top:5px; line-height:1.4; }
     /* Mockup */
-    .hero-mockup { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:var(--rl); padding:24px; }
+    .hero-mockup { display:none; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:var(--rl); padding:24px; }
     .mk-search { display:flex; align-items:center; gap:9px; background:white; border-radius:20px; padding:9px 16px; margin-bottom:14px; }
     .mk-search span { font-size:.8rem; color:var(--text); font-weight:500; }
     .mk-result { display:flex; align-items:flex-start; gap:11px; padding:11px 6px; border-bottom:1px solid rgba(255,255,255,.06); transition:background var(--t); }
@@ -164,8 +167,8 @@
     .mk-stars { color:var(--gold); }
     .mk-badge { display:inline-flex; align-items:center; gap:5px; background:rgba(27,94,171,.35); border:1px solid rgba(74,144,217,.3); color:var(--blue-light); padding:3px 9px; border-radius:5px; font-size:.62rem; font-weight:700; margin-top:5px; }
     .mk-miss { text-align:center; padding:10px 6px; font-size:.72rem; color:rgba(255,255,255,.25); font-style:italic; border-top:1px solid rgba(255,255,255,.06); }
-    @media(min-width:768px) { .hero-btns{flex-direction:row} }
-    @media(min-width:1024px) { .hero-inner{grid-template-columns:1fr 1.25fr;gap:60px} #hero{padding:100px 0 80px} .hero-stats{max-width:100%} }
+    @media(min-width:768px) { .hero-btns{flex-direction:row} .hero-btns a{display:inline-flex;width:auto} }
+    @media(min-width:1024px) { .hero-inner{grid-template-columns:1fr 1.25fr;gap:60px} #hero{padding:100px 0 80px} .hero-stats{max-width:100%} .hero-mockup{display:block} }
 
     /* TICKER */
     #ticker { background:var(--blue); padding:13px 0; overflow:hidden; }
@@ -176,7 +179,7 @@
     @keyframes tickerRoll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
     /* PROBLEM */
-    #problema { padding:88px 0; background:#EDF3FB; }
+    #problema { padding:0; background:#EDF3FB; }
     .prob-inner { display:grid; grid-template-columns:1fr; gap:48px; align-items:center; }
     .prob-text h2 { color:var(--dark); margin-bottom:12px; }
     .prob-text > p { color:var(--text-mid); margin-bottom:28px; line-height:1.8; max-width:480px; }
@@ -227,7 +230,7 @@
     .res-hdr h2 { color:white; margin-bottom:12px; }
     .res-hdr h2 span { color:var(--blue-light); }
     .res-hdr p { color:rgba(255,255,255,.45); font-size:.92rem; }
-    .res-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .res-grid { display:grid; grid-template-columns:1fr; gap:16px; }
     .res-card { background:rgba(255,255,255,.04); border:1px solid var(--border-dk); border-radius:var(--rl); padding:24px; transition:all var(--t); }
     .res-card:hover { background:rgba(255,255,255,.07); border-color:rgba(74,144,217,.3); transform:translateY(-3px); }
     .res-ico { width:44px; height:44px; background:rgba(27,94,171,.3); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:14px; }
@@ -237,6 +240,7 @@
     .res-card p { font-size:.78rem; color:rgba(255,255,255,.42); line-height:1.6; }
     .res-src { font-size:.62rem; color:rgba(255,255,255,.2); margin-top:8px; font-style:italic; }
     .res-cta { text-align:center; margin-top:40px; }
+    @media(min-width:480px) { .res-grid{grid-template-columns:1fr 1fr;gap:12px} }
     @media(min-width:768px) { .res-grid{grid-template-columns:repeat(4,1fr)} }
 
     /* WHY */
@@ -474,24 +478,26 @@
           <span class="badge-dot"></span>
           Especialistas en SEO Local · Costa del Sol
         </div>
-        <h1 id="hero-h1">Tus clientes te buscan<br>en Google.<em>¿Te encuentran?</em></h1>
-        <p class="hero-sub">Optimizamos tu Google Business Profile para que aparezcas en el TOP 3 de Google Maps. Más llamadas, más visitas, más clientes — desde la Costa del Sol.</p>
-        <div class="hero-btns">
+        <h1 id="hero-h1">Tus clientes buscan en Google.<em>¿Te encuentran?</em></h1>
+        <p class="hero-pain">Si no estás entre los primeros resultados, estás perdiendo clientes cada día.</p>
+        <p class="hero-sub">Optimizo tu perfil de Google para que aparezcas en el TOP 3 y conviertas busquedas en llamadas reales.</p>
+        <div class="hero-btns" style="margin-bottom:10px">
           <a href="#contacto" class="btn-blue">📍 Auditoría gratuita de tu perfil</a>
-          <a href="#servicios" class="btn-ghost-dk">Ver servicios →</a>
+          <a href="#servicios" class="btn-ghost-dk">👉 Quiero más clientes</a>
         </div>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.35);font-weight:400;margin-top:10px;margin-bottom:28px">Te digo qué está frenando tus resultados — <strong style="font-weight:700;color:rgba(255,255,255,.35)">sin compromiso</strong>.</p>
         <div class="hero-stats" role="list" aria-label="Datos clave">
           <div class="hs" role="listitem">
             <span class="hs-n" data-counter="93" data-suffix="%">0</span>
-            <span class="hs-l">búsquedas locales activan Google Maps*</span>
+            <span class="hs-l">de búsquedas locales muestran Google Maps*</span>
           </div>
           <div class="hs" role="listitem">
             <span class="hs-n" data-counter="76" data-suffix="%">0</span>
-            <span class="hs-l">visita el negocio en 24h tras buscar*</span>
+            <span class="hs-l">visitan o contactan en 24h*</span>
           </div>
           <div class="hs" role="listitem">
             <span class="hs-n">Top<span style="color:var(--blue-light)">3</span></span>
-            <span class="hs-l">nuestro objetivo en Google Maps</span>
+            <span class="hs-l">se llevan la mayoría de clientes</span>
           </div>
         </div>
         <p style="font-size:.6rem;color:rgba(255,255,255,.2);margin-top:10px">* Fuentes: Maplabs 2024 / Think with Google</p>
@@ -553,13 +559,13 @@
 
 <!-- PROBLEM -->
 <section id="problema" aria-labelledby="prob-h2">
-  <div id="problema" style="padding:88px 0;background:#EDF3FB">
+  <div id="problema" style="padding:88px 0 48px;background:#EDF3FB">
     <div class="container">
       <div class="prob-inner">
         <div class="prob-text rv">
           <div class="tag">El problema</div>
           <h2 id="prob-h2">Tu competencia te está<br><span style="color:var(--blue)">comiendo el terreno</span></h2>
-          <p>El 92% de los usuarios elige un negocio que aparece en la primera página de Google Maps. Si no estás ahí, no existes para ellos.</p>
+          <p style="color:var(--text);font-weight:400;max-width:560px">Cuando alguien busca tu servicio, llama a los negocios que aparecen primero.<br>Si tu negocio no está ahí, esos clientes se los lleva tu competencia. Y eso pasa cada día.</p>
           <div class="prob-items">
             <div class="prob-item">
               <div class="prob-ico">😴</div>
@@ -581,9 +587,10 @@
           <div class="pv-row"><div class="pv-rk v1">1</div><div><div class="pv-name">Clínica Dental Costa Sol</div><div class="pv-detail"><span class="pv-stars">★★★★★</span> 4.9 · 127 reseñas</div></div></div>
           <div class="pv-row"><div class="pv-rk v2">2</div><div><div class="pv-name">Implantes Marbella</div><div class="pv-detail"><span class="pv-stars">★★★★</span> 4.4 · 89 reseñas</div></div></div>
           <div class="pv-row"><div class="pv-rk v3">3</div><div><div class="pv-name">Dental Navarro</div><div class="pv-detail"><span class="pv-stars">★★★★</span> 4.2 · 56 reseñas</div></div></div>
-          <div class="pv-miss">⚠ Tu negocio no aparece — tus clientes se van a la competencia</div>
+          <div class="pv-miss" style="color:#475569;font-weight:600;font-size:.78rem;font-style:normal">⚠ Si tu negocio no aparece aquí, tus clientes se van a la competencia.</div>
         </div>
       </div>
+      <p style="text-align:center;margin-top:64px;margin-bottom:0;font-size:1.05rem;color:var(--text);line-height:1.65"><strong>El problema no es que no tengas un buen negocio.</strong><br>El problema es que no apareces cuando te buscan.</p>
     </div>
   </div>
 </section>
@@ -595,91 +602,103 @@
       <div class="sv-hdr rv">
         <div class="tag">Lo que hacemos</div>
         <h2 id="sv-h2">Servicios de <span style="color:var(--blue)">SEO Local</span></h2>
-        <p style="color:var(--text-mid);font-size:.92rem;max-width:520px;margin-top:12px">Todo lo necesario para dominar Google Maps en tu zona — desde la optimización inicial hasta la gestión mensual continua.</p>
+        <p style="color:var(--text-mid);font-size:.92rem;max-width:520px;margin-top:12px">No hago marketing genérico. Trabajo lo que de verdad mueve resultados: posicionamiento local, percepción de confianza y conversión.</p>
       </div>
       <div class="sv-tabs" role="tablist">
-        <button class="sv-tab on" data-tab="opt" role="tab" aria-selected="true">📍 Optimización GBP</button>
-        <button class="sv-tab" data-tab="foto" role="tab" aria-selected="false">📸 Reportaje Fotográfico</button>
-        <button class="sv-tab" data-tab="gestion" role="tab" aria-selected="false">📅 Gestión Mensual</button>
-        <button class="sv-tab" data-tab="informes" role="tab" aria-selected="false">📊 Informes Local Falcon</button>
+        <button class="sv-tab on" data-tab="opt" role="tab" aria-selected="true">📍 Optimización inicial</button>
+        <button class="sv-tab" data-tab="foto" role="tab" aria-selected="false">📸 Fotos del negocio</button>
+        <button class="sv-tab" data-tab="gestion" role="tab" aria-selected="false">📅 Gestión mensual</button>
+        <button class="sv-tab" data-tab="informes" role="tab" aria-selected="false">📊 Informes y seguimiento</button>
       </div>
       <div class="sv-panel on" id="tab-opt">
         <div class="sv-content rv">
-          <h3>Optimización Completa del Perfil GBP</h3>
-          <p>Auditamos y optimizamos tu Google Business Profile para que Google te identifique como el negocio más relevante de tu zona en la Costa del Sol.</p>
+          <h3>Optimización inicial para empezar a generar llamadas</h3>
+          <p>Optimizo tu perfil desde cero para que empieces a aparecer mejor en tu zona y convertir visitas en llamadas reales.</p>
           <div class="sv-list">
-            <div class="sv-item"><div class="sv-chk">✓</div>Auditoría inicial completa del perfil</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Categorías principales y secundarias optimizadas</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Descripción con keywords locales (Marbella, Costa del Sol…)</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Catálogo de servicios con precios y descripciones</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Código QR + Guía de respuesta a reseñas</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Alta en principales directorios locales</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Informe de posicionamiento inicial con Local Falcon</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Detecto qué está frenando tu visibilidad</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Ajusto tu perfil para aparecer en más búsquedas</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Mejoro tu imagen para generar más confianza</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Organizo tu información para que convierta mejor</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Dejo todo preparado para empezar a recibir llamadas</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Evitas errores que te hacen perder clientes</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Tienes una base sólida para crecer en tu zona</div>
           </div>
         </div>
-        <div class="sv-dark-card rv d2">
-          <div class="sv-dark-ico">📍</div>
-          <h4>Optimización GBP · Costa del Sol</h4>
-          <p>Un perfil completo y optimizado recibe hasta 7× más clics que uno incompleto. Los primeros resultados se ven en 4–8 semanas.</p>
-          <ul class="sv-bullets"><li>Análisis geolocalizado con Local Falcon</li><li>Keywords de tu sector y zona</li><li>Configuración NAP consistente</li></ul>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <div class="sv-dark-card rv d2">
+            <div class="sv-dark-ico">📍</div>
+            <h4>Empieza a recibir más llamadas desde Google Maps</h4>
+            <p>Un perfil bien optimizado no solo se ve mejor — hace que te encuentren antes y te elijan a ti. En pocas semanas puedes empezar a notar más visibilidad y más llamadas.</p>
+            <ul class="sv-bullets"><li>Empiezas a aparecer en más búsquedas</li><li>Generas más clics en tu perfil</li><li>Aumentan las llamadas de clientes reales</li></ul>
+          </div>
+          <p style="font-size:.82rem;color:var(--text-mid);font-style:italic;margin:0">No necesitas entender SEO. Solo necesitas que funcione. Yo me encargo.</p>
         </div>
       </div>
       <div class="sv-panel" id="tab-foto">
         <div class="sv-content rv">
-          <h3>Reportaje Fotográfico del Negocio</h3>
-          <p>Los negocios con fotos en GBP reciben un <strong>42% más de solicitudes de ruta</strong> y un <strong>35% más de clics a su web</strong>, según datos propios de Google. Las fotos son el primer factor visual de decisión.</p>
+          <h3>Fotos reales que hacen que más clientes confíen en tu negocio</h3>
+          <p>Las fotos reales hacen que tu negocio transmita más confianza desde el primer vistazo. Y cuando un cliente confía más, es mucho más fácil que te elija y te contacte.</p>
           <div class="sv-list">
-            <div class="sv-item"><div class="sv-chk">✓</div>Reportaje fotográfico con cámara réflex</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Hasta 15 fotos seleccionadas y editadas</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Geoetiquetado y metadatos para SEO</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Subida estratégica al perfil de Google</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Entrega de archivos en alta resolución</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Más confianza desde el primer vistazo</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Mejor imagen frente a tu competencia</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Fotos reales para tu perfil de Google</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Contenido visual pensado para convertir</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Material profesional para seguir usando en tu negocio</div>
           </div>
         </div>
-        <div class="sv-dark-card rv d2">
-          <div class="sv-dark-ico">📸</div>
-          <h4>Reportaje Profesional · No stock photos</h4>
-          <p>Fotos reales transmiten autenticidad. Los usuarios distinguen perfectamente una foto de stock de una foto real — y confían más en las reales.</p>
-          <ul class="sv-bullets"><li>Interior, exterior y equipo humano</li><li>Optimizadas para Google Maps</li><li>Entrega en 48h</li></ul>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <div class="sv-dark-card rv d2">
+            <div class="sv-dark-ico">📸</div>
+            <h4>Fotos reales. Más confianza. Más llamadas.</h4>
+            <p>Tus clientes notan cuándo un negocio parece real y cuándo no. Las fotos auténticas transmiten confianza y hacen que sea más fácil que te elijan a ti.</p>
+            <ul class="sv-bullets"><li>Tu negocio se ve más profesional</li><li>Generas más confianza al instante</li><li>Tus fotos dejan de parecer improvisadas</li></ul>
+          </div>
+          <p style="font-size:.82rem;color:var(--text-mid);font-style:italic;margin:0">No hace falta parecer una gran marca. Hace falta transmitir confianza real.</p>
         </div>
       </div>
       <div class="sv-panel" id="tab-gestion">
         <div class="sv-content rv">
-          <h3>Gestión Mensual Continua del GBP</h3>
-          <p>El algoritmo de Google premia los perfiles activos. Gestionamos tu ficha cada mes para que nunca pierdas posición frente a la competencia en la Costa del Sol.</p>
+          <h3>Gestión mensual para no perder visibilidad ni llamadas</h3>
+          <p>Si tu perfil se queda parado, tu competencia gana terreno. Mantengo tu ficha activa y optimizada para que sigas ganando visibilidad, clics y llamadas mes a mes.</p>
           <div class="sv-list">
-            <div class="sv-item"><div class="sv-chk">✓</div>3–4 publicaciones mensuales con keywords locales</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Gestión y respuesta estratégica a reseñas</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Actualización de horarios y novedades</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Seguimiento Local Falcon (3–5 keywords)</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Análisis de competidores mensual (plan Pro)</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Informe mensual de métricas GBP</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Tu perfil se mantiene activo cada mes</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Respondo reseñas para reforzar tu imagen</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Actualizo lo necesario para no perder relevancia</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Detecto si estás subiendo o bajando en tu zona</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Vigilo qué está haciendo tu competencia</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Tienes claridad total sobre la evolución de tu perfil</div>
           </div>
         </div>
-        <div class="sv-dark-card rv d2">
-          <div class="sv-dark-ico">📅</div>
-          <h4>Gestión Mensual · Sin permanencia</h4>
-          <p>Presencia activa y constante en Google Maps mes a mes. Sin contrato de permanencia — confiamos en los resultados, no en los contratos.</p>
-          <ul class="sv-bullets"><li>Sin contrato de permanencia</li><li>Informes mensuales incluidos</li><li>Comunicación directa siempre</li></ul>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <div class="sv-dark-card rv d2">
+            <div class="sv-dark-ico">📅</div>
+            <h4>Sigo trabajando tu perfil para que no pierdas terreno</h4>
+            <p>No sirve de mucho optimizar una vez y dejarlo abandonado. La mejora real llega cuando tu perfil se trabaja de forma continua y estratégica.</p>
+            <ul class="sv-bullets"><li>Tu perfil no se queda abandonado</li><li>Sigues mejorando mes a mes</li><li>Trabajo contigo de forma directa</li></ul>
+          </div>
+          <p style="font-size:.82rem;color:var(--text-mid);font-style:italic;margin:0">No necesitas estar pendiente de nada. Yo me encargo.</p>
         </div>
       </div>
       <div class="sv-panel" id="tab-informes">
         <div class="sv-content rv">
-          <h3>Informes y Análisis de Posicionamiento</h3>
-          <p>Con Local Falcon medimos tu posición real en cada punto de tu zona — no solo en tu dirección exacta. Datos geolocalizados que muestran exactamente dónde ganar terreno.</p>
+          <h3>Te enseño exactamente dónde estás ganando y perdiendo clientes</h3>
+          <p>No basta con saber si apareces o no. Lo importante es saber en qué zonas te ven, dónde estás perdiendo visibilidad y dónde tienes más oportunidad de crecer.</p>
           <div class="sv-list">
-            <div class="sv-item"><div class="sv-chk">✓</div>Análisis geolocalizado de tu zona de influencia</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Seguimiento de keywords locales clave</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Métricas GBP: visitas, llamadas, clics, rutas</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Comparativa mensual con tu competencia</div>
-            <div class="sv-item"><div class="sv-chk">✓</div>Evolución de ARP y SoLV mensual</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Ves en qué zonas apareces mejor</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Detectas dónde estás perdiendo oportunidades</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Sabes si estás generando más llamadas y clics</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Comparas tu evolución con la competencia</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Tomas decisiones con datos reales, no intuición</div>
           </div>
         </div>
-        <div class="sv-dark-card rv d2">
-          <div class="sv-dark-ico">📊</div>
-          <h4>Datos reales, no estimaciones</h4>
-          <p>Local Falcon te muestra en qué calles apareces en el TOP 3 y en cuáles no. Sin adivinanzas — solo datos geolocalizados accionables.</p>
-          <ul class="sv-bullets"><li>Mapas de calor geolocalizados</li><li>ARP y SoLV mensuales</li><li>Informes en PDF descargables</li></ul>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <div class="sv-dark-card rv d2">
+            <div class="sv-dark-ico">📊</div>
+            <h4>Sabes exactamente si estás avanzando o no</h4>
+            <p>Te muestro con claridad dónde estás ganando visibilidad, dónde estás flojo y qué zonas tienen más potencial para atraer nuevos clientes.</p>
+            <ul class="sv-bullets"><li>Entiendes mejor tu situación real</li><li>Ves tu evolución de forma clara</li><li>Sabes qué decisiones tienen sentido</li></ul>
+          </div>
+          <p style="font-size:.82rem;color:var(--text-mid);font-style:italic;margin:0">No trabajo por intuición. Trabajo con datos.</p>
         </div>
       </div>
     </div>
@@ -701,7 +720,7 @@
         <div class="res-card rv d2"><div class="res-ico">📍</div><div class="res-lbl">Rutas</div><div class="res-num"><span>+42</span>%</div><p>más solicitudes de ruta hacia tu negocio con fotos en el perfil de Google</p><p class="res-src">Google (dato oficial GBP)</p></div>
         <div class="res-card rv d3"><div class="res-ico">🌐</div><div class="res-lbl">Visitas web</div><div class="res-num"><span>+35</span>%</div><p>más clics a tu sitio web desde la ficha de Google con fotos optimizadas</p><p class="res-src">Google (dato oficial GBP)</p></div>
       </div>
-      <div class="res-cta rv"><a href="#contacto" class="btn-light">📍 Optimizar mi perfil ahora →</a></div>
+      <div class="res-cta rv"><a href="#contacto" class="btn-light">📍 Quiero más clientes →</a></div>
     </div>
   </div>
 </section>
@@ -716,12 +735,12 @@
         <p style="color:var(--text-mid);font-size:.92rem;max-width:520px;margin-top:12px">Solo hacemos SEO Local en la Costa del Sol. Conocemos el algoritmo de Google Maps mejor que nadie en la zona.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card rv"><div class="why-ico" style="background:var(--blue-soft)">🎯</div><h3>Especialización total en SEO Local</h3><p>Solo hacemos GBP y SEO local. No somos una agencia genérica — sabemos exactamente qué señales mueve el algoritmo de Google Maps.</p></div>
-        <div class="why-card rv d1"><div class="why-ico" style="background:#F0FDF4">📊</div><h3>Datos geolocalizados con Local Falcon</h3><p>Medimos tu posición en cada punto de tu zona, no solo en tu dirección. Datos reales para decisiones reales.</p></div>
-        <div class="why-card rv d2"><div class="why-ico" style="background:#FFF7ED">📸</div><h3>Fotografía profesional incluida</h3><p>Reportaje con cámara réflex, no stock photos. La autenticidad visual genera más confianza y mejores posiciones.</p></div>
-        <div class="why-card rv d3"><div class="why-ico" style="background:#F5F3FF">📋</div><h3>Informes claros cada mes</h3><p>Ves exactamente qué hemos hecho, cómo ha evolucionado tu posición y cuántas llamadas y visitas has ganado.</p></div>
-        <div class="why-card rv d4"><div class="why-ico" style="background:#FFF1F2">💬</div><h3>Gestión de reseñas estratégica</h3><p>Respondemos con estrategia, no con copy-paste. Cada reseña — positiva o negativa — es una oportunidad de marketing.</p></div>
-        <div class="why-card rv"><div class="why-ico" style="background:var(--blue-soft)">🔓</div><h3>Sin permanencias</h3><p>Confiamos en los resultados, no en los contratos. Cancela cuando quieras. Sin letra pequeña, sin penalizaciones.</p></div>
+        <div class="why-card rv"><div class="why-ico" style="background:var(--blue-soft)">🎯</div><h3>Especialización total en SEO Local</h3><p>Solo trabajo SEO local y Google Business Profile. No hago marketing genérico — me centro en lo que realmente hace que subas posiciones y recibas llamadas.</p></div>
+        <div class="why-card rv d1"><div class="why-ico" style="background:#F0FDF4">📊</div><h3>Datos geolocalizados con Local Falcon</h3><p>Mido tu posición real en toda tu zona, no solo en tu dirección. Así sé exactamente dónde estás perdiendo clientes y dónde hay oportunidad.</p></div>
+        <div class="why-card rv d2"><div class="why-ico" style="background:#FFF7ED">📸</div><h3>Fotografía profesional incluida</h3><p>Mejoro la imagen de tu negocio con contenido real (no stock) para que quien te encuentre, confíe y contacte.</p></div>
+        <div class="why-card rv d3"><div class="why-ico" style="background:#F5F3FF">📋</div><h3>Informes claros cada mes</h3><p>Te explico de forma clara qué se ha hecho, qué ha mejorado y cómo evoluciona tu visibilidad y tus contactos.</p></div>
+        <div class="why-card rv d4"><div class="why-ico" style="background:#FFF1F2">💬</div><h3>Cada reseña cuenta</h3><p>Trabajo las reseñas como parte de tu estrategia. Bien gestionadas, pueden marcar la diferencia entre que te elijan o no.</p></div>
+        <div class="why-card rv"><div class="why-ico" style="background:var(--blue-soft)">🔓</div><h3>Sin permanencias</h3><p>Si no ves valor, no tiene sentido continuar. Prefiero que te quedes por resultados, no por contrato.</p></div>
       </div>
     </div>
   </div>
@@ -734,13 +753,13 @@
       <div class="proc-hdr rv">
         <div class="tag" style="justify-content:center">Cómo trabajamos</div>
         <h2 id="proc-h2">Tu negocio en <span style="color:var(--blue)">4 pasos</span></h2>
-        <p style="color:var(--text-mid);font-size:.92rem;margin-top:12px">En pocas semanas, tu perfil empieza a aparecer donde tus clientes te buscan en la Costa del Sol.</p>
+        <p style="color:var(--text-mid);font-size:.92rem;margin-top:12px">En pocas semanas, tu negocio empieza a generar más llamadas desde Google Maps.</p>
       </div>
       <div class="steps">
-        <div class="step rv"><div class="step-n">1</div><div class="step-b"><h3>Auditoría gratuita</h3><p>Analizamos tu perfil actual y te decimos exactamente dónde estás y qué mejorar en tu zona. Sin coste ni compromiso.</p></div></div>
-        <div class="step rv d1"><div class="step-n">2</div><div class="step-b"><h3>Estrategia personalizada</h3><p>Diseñamos un plan específico para tu sector y zona geográfica, con las keywords locales que más convierten.</p></div></div>
-        <div class="step rv d2"><div class="step-n">3</div><div class="step-b"><h3>Optimización y activación</h3><p>Aplicamos mejoras, subimos fotos, configuramos el perfil al completo y activamos la estrategia de contenido.</p></div></div>
-        <div class="step rv d3"><div class="step-n">4</div><div class="step-b"><h3>Seguimiento mensual</h3><p>Monitorizamos con Local Falcon, generamos informes y seguimos mejorando tu posición mes a mes.</p></div></div>
+        <div class="step rv"><div class="step-n">1</div><div class="step-b"><h3>Auditoría gratuita</h3><p>Analizo tu situación actual para ver exactamente dónde estás y qué mejorar en tu zona. Sin coste ni compromiso.</p></div></div>
+        <div class="step rv d1"><div class="step-n">2</div><div class="step-b"><h3>Estrategia personalizada</h3><p>Defino una estrategia adaptada a tu negocio, tu zona y las búsquedas que realmente te pueden traer clientes.</p></div></div>
+        <div class="step rv d2"><div class="step-n">3</div><div class="step-b"><h3>Optimización y activación</h3><p>Optimizo tu perfil, mejoro el contenido y dejo todo preparado para empezar a generar llamadas.</p></div></div>
+        <div class="step rv d3"><div class="step-n">4</div><div class="step-b"><h3>Seguimiento mensual</h3><p>Reviso resultados, ajusto la estrategia y sigo mejorando tu posicionamiento mes a mes.</p></div></div>
       </div>
     </div>
   </div>
