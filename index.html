@@ -137,7 +137,7 @@
     .p2 { width:24px; height:24px; top:65%; right:9%; opacity:.08; animation-delay:2.5s; }
     .p3 { width:16px; height:16px; bottom:22%; left:18%; opacity:.06; animation-delay:4.5s; }
     @keyframes floatPin { 0%,100%{transform:rotate(-45deg) translateY(0)} 50%{transform:rotate(-45deg) translateY(-14px)} }
-    .hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr; gap:40px; align-items:center; }
+    .hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1fr); gap:40px; align-items:center; }
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(27,94,171,.2); border:1px solid rgba(74,144,217,.3); color:var(--blue-light); padding:7px 16px; border-radius:100px; font-size:.72rem; font-weight:700; letter-spacing:.4px; text-transform:uppercase; margin-bottom:20px; max-width:100%; white-space:normal; }
     @media(min-width:1024px) { .hero-badge { letter-spacing:1.2px; white-space:nowrap; } }
     .badge-dot { width:6px; height:6px; background:var(--blue-light); border-radius:50%; animation:pulseDot 2.2s infinite; flex-shrink:0; }
