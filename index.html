@@ -1148,6 +1148,7 @@
     try{
       await sendToFormspree({nombre:n,negocio:ng,email:em,telefono:document.getElementById('ct-tel').value.trim(),sector:document.getElementById('ct-sector').value,mensaje:document.getElementById('ct-msg').value.trim()});
       ok(btn,'✓ ¡Recibido! Te contactamos en menos de 24h');
+      setTimeout(()=>{ window.location.href='gracias.html'; },1200);
     }catch(e){alert('Hubo un error al enviar. Inténtalo de nuevo o escríbenos a hola@mapleads.es');err(btn,orig);}
   }
   async function submitModal(btn){
