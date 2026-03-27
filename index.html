@@ -685,7 +685,7 @@
           <h3>Te enseño exactamente dónde estás ganando y perdiendo clientes</h3>
           <p>No basta con saber si apareces o no. Lo importante es saber en qué zonas te ven, dónde estás perdiendo visibilidad y dónde tienes más oportunidad de crecer.</p>
           <div class="sv-list">
-            <div class="sv-item"><div class="sv-chk">✓</div>Ves en qué zonas apareces mejor</div>
+            <div class="sv-item"><div class="sv-chk">✓</div>Tu posición real - ves en qué zonas apareces mejor</div>
             <div class="sv-item"><div class="sv-chk">✓</div>Detectas dónde estás perdiendo oportunidades</div>
             <div class="sv-item"><div class="sv-chk">✓</div>Sabes si estás generando más llamadas y clics</div>
             <div class="sv-item"><div class="sv-chk">✓</div>Comparas tu evolución con la competencia</div>
@@ -1148,7 +1148,6 @@
     try{
       await sendToFormspree({nombre:n,negocio:ng,email:em,telefono:document.getElementById('ct-tel').value.trim(),sector:document.getElementById('ct-sector').value,mensaje:document.getElementById('ct-msg').value.trim()});
       ok(btn,'✓ ¡Recibido! Te contactamos en menos de 24h');
-      setTimeout(()=>{ window.location.href='gracias.html'; },1200);
     }catch(e){alert('Hubo un error al enviar. Inténtalo de nuevo o escríbenos a hola@mapleads.es');err(btn,orig);}
   }
   async function submitModal(btn){
